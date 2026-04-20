@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Layout 練習</title>
+    <style>
+        .container {
+            width: 600px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            line-height: 1.6;
+            margin: auto;
+            background-color: white; 
+            box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* 1. Inline-blocks (黃色方塊) */
+        .highlight {
+            display: inline-block; /* 關鍵：讓 span 可以設定寬高 */
+            background-color: yellow;
+            border: 1px solid blue;
+            padding: 2px 5px;
+            margin: 0 2px;
+            font-weight: bold;
+            vertical-align: middle; /* 讓方塊與文字對齊 */
+        }
+
+        /* 2. Float div with overflow (右側綠色方塊) */
+        .float-box {
+            float: right;          /* 靠右浮動 */
+            width: 150px;
+            height: 150px;         /* 設定固定高度以觸發 overflow */
+            border: 3px solid #7eb11c;
+            margin-left: 15px;
+            padding: 10px;
+            
+            overflow: auto;        /* 關鍵：內容過多時顯示捲軸 */
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="float-box">
+            A float div with overflow auto. A float div with overflow auto. 
+            A float div with overflow auto. A float div with overflow auto.
+            A float div with overflow auto. A float div with overflow auto.
+            A float div with overflow auto. A float div with overflow auto.
+        </div>
+
+        <p>
+            (Just long sentence.) Let me not to the marriage of true minds Admit impediments. 
+            <span class="highlight">Love</span> is not love Which alters when it alteration finds, 
+            Or bends with the remover to remove: O, no! it is an ever-fix'ed mark, 
+            That looks on tempests and is never shaken; It is the star to every wand'ring bark, 
+            Whose worth's unknown, although his height be taken. 
+            <span class="highlight">Love's</span> not Time's fool, though rosy lips and cheeks 
+            Within his bending sickle's compass come; 
+            <span class="highlight">Love</span> alters not with his brief hours and weeks, 
+            But bears it out even to the edge of doom. If this be error and upon me proved, 
+            I never writ, nor no man ever loved.
+        </p>
+    </div>
+
+</body>
+</html>
