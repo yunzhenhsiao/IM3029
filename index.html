@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>IM3029</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        img {
+            display: block;
+        }
+
+        .img-left {
+            width: 33%;
+            height: 300px;
+            border-radius: 18px;
+            object-fit: cover; 
+        }
+
+        .img-center {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid #333; 
+            object-fit: cover;
+        }
+
+        .img-right {
+            width: 33%;
+            height: 300px;
+            object-fit: fill; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://picsum.photos/id/1015/600/800" alt="Eiffel Tower" class="img-left">
+
+        <img src="https://picsum.photos/id/1004/300/300" alt="Mountain" class="img-center">
+
+        <img src="https://picsum.photos/id/1015/600/800" alt="Eiffel Tower" class="img-right">
+    </div>
+
+</body>
+</html>
