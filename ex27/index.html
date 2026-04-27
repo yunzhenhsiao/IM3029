@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM3029</title>
+    <style>
+        /* 基本背景與容器設定 */
+        body {
+            background-color: #5eb5f7; /* 藍色背景 */
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        /* 區塊通用樣式 */
+        .box {
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* 綠色大區塊 */
+        .header-box {
+            background-color: #a6d34e;
+            height: 150px;
+            width: 100%;
+        }
+
+        /* 中間藍色區塊容器 */
+        .middle-section {
+            display: flex;
+            flex-direction: column; /* 預設垂直排列 (手機版) */
+            gap: 10px;
+        }
+
+        .mid-box {
+            background-color: #12b5c5;
+            height: 80px;
+            /* flex: 1; */
+        }
+
+        /* 下方淺灰色區塊容器 */
+        .footer-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 預設 2 欄 (手機版) */
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .small-box {
+            background-color: #e9ecef;
+            height: 40px;
+        }
+
+        /* --- 核心關鍵：媒體查詢 (寬度大於 480px 時的變化) --- */
+        @media (min-width: 480px) {
+            .middle-section {
+                flex-direction: row; /* 變更為橫向排列 (b圖) */
+            }
+
+            .mid-box {
+                height: 150px; /* 橫向時增加一點高度 */
+                flex: 1; /* 讓三個藍色區塊等寬分配空間 */
+            }
+
+            .footer-section {
+                grid-template-columns: repeat(4, 1fr); /* 變更為 4 欄 (b圖) */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box header-box"></div>
+
+        <div class="middle-section">
+            <div class="box mid-box"></div>
+            <div class="box mid-box"></div>
+            <div class="box mid-box"></div>
+        </div>
+
+        <div class="footer-section">
+            <div class="box small-box"></div>
+            <div class="box small-box"></div>
+            <div class="box small-box"></div>
+            <div class="box small-box"></div>
+        </div>
+    </div>
+
+</body>
+</html>
