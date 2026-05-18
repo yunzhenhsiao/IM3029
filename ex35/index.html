@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 物件操作練習</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 5px; }
+        .section { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript 物件操作結果</h1>
+
+    <div class="section">
+        <h3>1. 原始物件的所有屬性名稱：</h3>
+        <pre id="all-properties"></pre>
+    </div>
+
+    <div class="section">
+        <h3>2. 刪除 age 屬性後的物件內容：</h3>
+        <pre id="deleted-object"></pre>
+    </div>
+
+    <script>
+        // 題目給給定範例物件
+        var Person = {
+            firstName : "Tony",
+            lastName : "Lee",
+            age : 50,
+            eyeColor : "Blue"
+        };
+
+        // 步驟 1: 列出所有屬性 (使用 Object.keys 方法)
+        var properties = Object.keys(Person);
+        document.getElementById('all-properties').textContent = properties.join(', ');
+
+        // 步驟 2: 刪除 age 屬性 (使用 delete 關鍵字)
+        delete Person.age;
+
+        // 步驟 3: 刪除屬性後印出整個物件 (使用 JSON.stringify 轉成漂亮格式)
+        document.getElementById('deleted-object').textContent = JSON.stringify(Person, null, 2);
+        
+        // 同時在瀏覽器的主控台 (Console) 也印出結果
+        console.log("所有屬性:", properties);
+        console.log("刪除 age 後的物件:", Person);
+    </script>
+</body>
+</html>
