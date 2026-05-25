@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>IM3029</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>圓形屬性計算</h2>
+    <label for="radiusInput">請輸入圓的半徑：</label>
+    <input type="number" id="radiusInput" placeholder="例如：5" min="0">
+    <button onclick="handleCalculation()">開始計算</button>
+
+    <div class="result" id="circumferenceResult"></div>
+    <div class="result" id="areaResult"></div>
+</div>
+
+<script>
+    // 1. 計算圓周長的函式
+    function calcCircumfrence(radius) {
+        // 圓周長 = 2 * PI * r
+        const circumference = 2 * Math.PI * radius;
+        // 為了美觀，用 toFixed(2) 取到小數點後兩位
+        return "The circumference is " + circumference.toFixed(2);
+    }
+
+    // 2. 計算圓面積的函式
+    function calcArea(radius) {
+        // 圓面積 = PI * r^2
+        const area = Math.PI * Math.pow(radius, 2);
+        return "The area is " + area.toFixed(2);
+    }
+
+    // 處理按鈕點擊的控制函式
+    function handleCalculation() {
+        // 取得使用者輸入的半徑值
+        const radiusValue = parseFloat(document.getElementById("radiusInput").value);
+
+        // 檢查輸入是否合法
+        if (isNaN(radiusValue) || radiusValue <= 0) {
+            alert("請輸入大於 0 的有效數字");
+            return;
+        }
+
+        // 呼叫題目要求的兩個函式
+        const circumferenceOutput = calcCircumfrence(radiusValue);
+        const areaOutput = calcArea(radiusValue);
+
+        // 將結果顯示在網頁上
+        document.getElementById("circumferenceResult").innerText = circumferenceOutput;
+        document.getElementById("areaResult").innerText = areaOutput;
+    }
+</script>
+
+</body>
+</html>
